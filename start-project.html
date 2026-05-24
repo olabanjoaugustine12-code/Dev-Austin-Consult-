@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start a Project — Dev Austin Consult</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Austin Consult</title>
+    <link rel="stylesheet" href="StartProject.css">
+    <link rel="manifest" href="manifest.json">
+  </head>
+
+  <body>
+    <header class="navbar">
+      <img src="file_00000000eac072439d1abe2cc0e248ca.png" alt="" width="200px" height="150px" class="pro">
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="link" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="start-project.html" class="active">Start Project</a>
+      </nav>
+    </header>
+
+    <button id="installBtn" style="display:none;">Install App</button>
+
+    <!-- HERO -->
+    <div class="page-hero">
+      <div class="badge">Client Intake Form</div>
+      <h1 class="build">Let's Build Something <span>Exceptional</span></h1>
+      <p>Tell me about your project. The more detail you share, the better I can craft a solution that truly works for
+        your business.</p>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-section">
+      <div class="step-labels">
+        <span class="step-label done" id="lbl1"></span>
+        <span class="step-label" id="lbl2"></span>
+        <span class="step-label" id="lbl3"></span>
+        <span class="step-label" id="lbl4"></span>
+        <span class="step-label" id="lbl5"></span>
+        <span class="step-label" id="lbl6"></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress" id="progress"></div>
+      </div>
+      <p id="stepText">Step 1 of 6</p>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-container">
+      <form id="multiStepForm" action="thank-you.html" method="POST" name="contact" data-netlify="true">
+
+        <input type="hidden" name="form-name" value="contact">
+
+        <!-- STEP 1: Contact Info -->
+        <div class="form-step active">
+          <div class="step-header">
+            <div class="step-number">Step 01 / 06</div>
+            <h2>Contact Information</h2>
+            <p>Let's start with the basics. How do I reach you?</p>
+          </div>
+
+          <div class="field-group">
+            <div class="field">
+              <label>Full Name *</label>
+              <input type="text" name="full_name" placeholder="e.g. Ola John" required>
+            </div>
+            <div class="field">
+              <label>Business /Brand Name *</label>
+              <input type="text" name="business_name" placeholder="e.g. John's Logistics" required>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field">
+              <label>Phone Number *</label>
+              <input type="tel" name="phone_number" placeholder="+234 800 000 0000" required>
+            </div>
+            <div class="field">
+              <label>WhatsApp Number</label>
+              <input type="tel" name="whatsapp_number" placeholder="Same as phone? Write it again">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="yourname@email.com">
+          </div>
+
+          <div class="field">
+            <label>Your Role / Position</label>
+            <input type="text" name="role" placeholder="e.g. CEO, Marketing Manager, Founder">
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="next-btn">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Business Details -->
+        <div class="form-step">
+          <div class="step-header">
+            <div class="step-number">Step 02 / 06</div>
+            <h2>Business Details</h2>
+            <p>Help me understand your business so I can build the right solution.</p>
+          </div>
+
+          <div class="field">
+            <label>What does your business do? *</label>
+            <input type="text" name="business_type" placeholder="e.g. We sell handmade shoes in Lagos" required>
+          </div>
+
+          <div class="field">
+            <label>Describe your products or services</label>
+            <textarea name="services"
+              placeholder="List what you offer. The more detail, the better — e.g. 'We offer custom cake designs, wedding cakes, and pastry catering across Abuja.'"></textarea>
+          </div>
+
+          <div class="field-group">
+            <div class="field">
+              <label>Business Location</label>
+              <input type="text" name="location" placeholder="e.g. Lagos, Nigeria">
+            </div>
+            <div class="field">
+              <label>Industry / Sector</label>
+              <select name="industry">
+                <option value="">Select industry</option>
+                <option>E-commerce / Retail</option>
+                <option>Food & Hospitality</option>
+                <option>Health & Wellness</option>
+                <option>Fashion & Beauty</option>
+                <option>Real Estate</option>
+                <option>Education / Training</option>
+                <option>Finance / Investment</option>
+                <option>Tech / Software</option>
+                <option>Logistics / Transport</option>
+                <option>Media / Entertainment</option>
+                <option>Church / Ministry</option>
+                <option>NGO / Non-profit</option>
+                <option>Personal Brand / Portfolio</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Who is your target audience?</label>
+            <input type="text" name="target_audience"
+              placeholder="e.g. Young Nigerian professionals aged 25–40 who shop online">
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="prev-btn">← Back</button>
+            <button type="button" class="next-btn">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Website Goals & Features -->
+        <div class="form-step">
+          <div class="step-header">
+            <div class="step-number">Step 03 / 06</div>
+            <h2>Website Goals & Features</h2>
+            <p>What do you want your website to achieve? Select all that apply.</p>
+          </div>
+
+          <div class="field">
+            <label>Primary Goal for this Website *</label>
+            <select name="website_goal" required>
+              <option value="">Select your main goal</option>
+              <option value="get_customers">Attract & convert new customers</option>
+              <option value="booking">Accept appointments / bookings</option>
+              <option value="sell_products">Sell products online (e-commerce)</option>
+              <option value="portfolio">Showcase my work / portfolio</option>
+              <option value="information">Share information / blog / news</option>
+              <option value="donations">Accept donations or fundraise</option>
+              <option value="members">Build a members / community platform</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Features You Need (select all that apply)</label>
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="whatsapp_chat">
+                <span>💬 WhatsApp Chat Button</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="contact_form">
+                <span>📩 Contact Form</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="gallery">
+                <span>🖼 Image Gallery</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="pricing">
+                <span>💰 Pricing / Packages Section</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="booking_system">
+                <span>📅 Booking / Appointment System</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="online_payment">
+                <span>💳 Online Payment Integration</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="blog">
+                <span>📝 Blog / Articles Section</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="social_media">
+                <span>📱 Social Media Integration</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="map">
+                <span>📍 Map / Location Embed</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="testimonials">
+                <span>⭐ Testimonials / Reviews Section</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="newsletter">
+                <span>📧 Newsletter / Email Subscription</span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="features[]" value="live_chat">
+                <span>🤖 AI / Live Chat Support</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Any other features not listed above?</label>
+            <input type="text" name="other_features" placeholder="Describe any extra functionality you need">
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="prev-btn">← Back</button>
+            <button type="button" class="next-btn">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Content & Assets -->
+        <div class="form-step">
+          <div class="step-header">
+            <div class="step-number">Step 04 / 06</div>
+            <h2>Content & Assets</h2>
+            <p>What content do you already have? Don't worry if you don't have everything — I can help.</p>
+          </div>
+
+          <div class="field">
+            <label>Do you have a logo?</label>
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="has_logo" value="yes">
+                <span>✅ Yes, I have a logo</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="has_logo" value="no">
+                <span>❌ No, I need one designed</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Upload Your Logo (PNG, SVG, or JPG)</label>
+            <div class="upload-zone">
+              <input type="file" name="logo_file" accept=".png,.jpg,.jpeg,.svg,.pdf">
+              <div class="upload-icon">🖼</div>
+              <p>Drag & drop or <strong>click to browse</strong><br>PNG, SVG, JPG — max 10MB</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Do you have photos / images for the site?</label>
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="has_images" value="yes">
+                <span>📸 Yes, I have images</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="has_images" value="no">
+                <span>🔍 No, use stock photos</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Upload Brand Images / Photos (multiple allowed)</label>
+            <div class="upload-zone">
+              <input type="file" name="brand_images[]" accept=".png,.jpg,.jpeg,.webp" multiple>
+              <div class="upload-icon">📁</div>
+              <p>Drag & drop or <strong>click to browse</strong><br>Upload multiple files at once</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Do you already have a domain name?</label>
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="has_domain" value="yes">
+                <span>🌐 Yes, I have one</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="has_domain" value="no">
+                <span>❓ No, I need help getting one</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Your domain name (if you have one)</label>
+            <input type="text" name="domain_name" placeholder="e.g. www.mybusiness.com">
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="prev-btn">← Back</button>
+            <button type="button" class="next-btn">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 5: Design Preferences & Budget -->
+        <div class="form-step">
+          <div class="step-header">
+            <div class="step-number">Step 05 / 06</div>
+            <h2>Design & Budget</h2>
+            <p>Help me understand your visual taste and investment expectations.</p>
+          </div>
+
+          <div class="field">
+            <label>Preferred Color Palette</label>
+            <input type="text" name="color_preference" placeholder="e.g. Black and gold, Blue and white, Earthy tones">
+          </div>
+
+          <div class="field">
+            <label>Overall Vibe / Design Style</label>
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="design_style" value="modern_minimal">
+                <span>🎯 Modern & Minimal</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="design_style" value="bold_vibrant">
+                <span>🔥 Bold & Vibrant</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="design_style" value="luxury_elegant">
+                <span>💎 Luxury & Elegant</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="design_style" value="friendly_playful">
+                <span>🌟 Friendly & Playful</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="design_style" value="corporate_professional">
+                <span>🏢 Corporate & Professional</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="design_style" value="no_preference">
+                <span>🤷 No preference — surprise me</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Reference Website You Like (URL)</label>
+            <input type="url" name="reference_url" placeholder="https://websiteyoulike.com">
+          </div>
+
+          <div class="field">
+            <label>What is your budget range? *</label>
+            <div class="budget-grid">
+              <label class="budget-card">
+                <input type="radio" name="budget" value="20k-50k" required>
+                <div class="budget-range">₦20k – ₦50k</div>
+                <div class="budget-desc">Starter / Landing Page</div>
+              </label>
+              <label class="budget-card">
+                <input type="radio" name="budget" value="50k-150k">
+                <div class="budget-range">₦50k – ₦150k</div>
+                <div class="budget-desc">Business Website</div>
+              </label>
+              <label class="budget-card">
+                <input type="radio" name="budget" value="150k+">
+                <div class="budget-range">₦150k+</div>
+                <div class="budget-desc">Full E-commerce / Custom</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>When do you need this completed?</label>
+            <div class="timeline-grid">
+              <label class="timeline-card">
+                <input type="radio" name="timeline" value="asap">
+                <div class="t-title">⚡ ASAP</div>
+                <div class="t-sub">Within 1–2 weeks</div>
+              </label>
+              <label class="timeline-card">
+                <input type="radio" name="timeline" value="1_month">
+                <div class="t-title">📅 1 Month</div>
+                <div class="t-sub">Normal pace</div>
+              </label>
+              <label class="timeline-card">
+                <input type="radio" name="timeline" value="flexible">
+                <div class="t-title">🔄 Flexible</div>
+                <div class="t-sub">No rush</div>
+              </label>
+              <label class="timeline-card">
+                <input type="radio" name="timeline" value="specific">
+                <div class="t-title">📌 Specific Date</div>
+                <div class="t-sub">Tell me below</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="prev-btn">← Back</button>
+            <button type="button" class="next-btn">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 6: Final Review & Submit -->
+        <div class="form-step">
+          <div class="step-header">
+            <div class="step-number">Step 06 / 06</div>
+            <h2>Final Notes & Submit</h2>
+            <p>Almost there! Any last details that will help me understand your vision?</p>
+          </div>
+
+          <div class="field">
+            <label>How did you hear about Dev Austin Consult?</label>
+            <select name="referral_source">
+              <option value="">Select an option</option>
+              <option>WhatsApp / Referral</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>Twitter / X</option>
+              <option>Google Search</option>
+              <option>TikTok</option>
+              <option>Friend or Colleague</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Have you worked with a web developer before?</label>
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="prev_developer" value="yes">
+                <span>✅ Yes</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="prev_developer" value="no">
+                <span>❌ No, this is my first time</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Anything else I should know about your project?</label>
+            <textarea name="extra_info"
+              placeholder="Share anything extra — your vision, concerns, inspiration, special requirements, or even just your energy for this project. The more you tell me, the better I can serve you."></textarea>
+          </div>
+
+          <div class="field">
+            <label>Preferred way to be contacted *</label>
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="contact_preference" value="whatsapp">
+                <span>💬 WhatsApp</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="contact_preference" value="email">
+                <span>📧 Email</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="contact_preference" value="call">
+                <span>📞 Phone Call</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="contact_preference" value="any">
+                <span>🔄 Any works</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="prev-btn">← Back</button>
+            <button type="submit" class="submit-btn">🚀 Submit Project Brief</button>
+          </div>
+        </div>
+
+      </form>
+
+
+      <div class="success-screen" id="successScreen">
+        <div class="check">✅</div>
+        <h2>Brief Received!</h2>
+        <p>Thank you for submitting your project details. Dev Austin will review your brief and reach out within
+          <strong>24 hours</strong> to discuss next steps.
+        </p>
+      </div>
+    </div>
+
+
+    <footer class="footer">
+    <div class="footer-top wrap">
+      <div class="ft-brand">
+        <img src="file_00000000eac072439d1abe2cc0e248ca.png" alt="Dev Austin Consult" width="200px" height="150px" class="dam">
+        <p>We turn ideas into powerful digital realities. Professional web & WordPress development based in Nigeria.</p>
+        <div class="ft-socials">
+          <a href="#">📸</a><a href="#">💬</a><a href="#">📘</a><a href="#">🐦</a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="start-project.html">Start a Project</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Custom Websites</a></li>
+          <li><a href="#">WordPress Dev</a></li>
+          <li><a href="#">E-Commerce</a></li>
+          <li><a href="#">Logo & Branding</a></li>
+          <li><a href="#">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://wa.me/234XXXXXXXXXX">WhatsApp Us</a></li>
+          <li><a href="mailto:your@email.com">Send an Email</a></li>
+          <li><a href="#">Instagram DM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap fb-inner">
+        <p>© 2025 Dev Austin Consult. All rights reserved.</p>
+        <p>Built with <span style="color:var(--accent)">♥</span> by Austin</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- AI CHAT FAB -->
+  <button class="chat-fab" id="chatFab" title="Chat with Austin AI">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  </button>
+  <div class="chat-bubble" id="chatBubble">
+    <div class="chat-header">
+      <div class="chat-avatar">🧑‍💻</div>
+      <div class="chat-header-info">
+        <h4>Dev Austin AI</h4>
+        <p>● Online — Ask me anything</p>
+      </div>
+      <button class="chat-close" id="chatClose">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Hey! 👋 I'm Austin AI — your guide to working with <strong>Dev Austin Consult</strong>. Ask
+        me anything about services, pricing, or how to get started!</div>
+    </div>
+    <div class="quick-replies" id="quickReplies">
+      <button class="quick-reply">What do you do?</button>
+      <button class="quick-reply">How much does a website cost?</button>
+      <button class="quick-reply">How long does it take?</button>
+      <button class="quick-reply">WordPress or custom?</button>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type your question…" autocomplete="off">
+      <button id="sendBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13" />
+          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+    <script src="consult.js"></script>
+  </body>
+
+  </html>

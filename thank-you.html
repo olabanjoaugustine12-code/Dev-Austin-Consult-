@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brief Received! — Dev Austin Consult</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #e99b09;
+      --bg: #080808;
+      --text: #efefef;
+      --muted: #666;
+      --border: #1e1e1e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'DM Sans', sans-serif; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAVBAR ───────────────────── */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background: #000;
+      height: 80px;
+      border-bottom: 1px solid var(--border);
+    }
+    .navbar img { width: 160px; height: auto; margin-left: -20px; }
+
+    /* ── MAIN CONTENT ─────────────── */
+    .page {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background glow */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(233,155,9,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Background grid */
+    .page::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(233,155,9,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(233,155,9,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      background: #0f0f0f;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 56px 48px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+
+    /* Gold top border accent */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 0 0 4px 4px;
+    }
+
+    .check-wrap {
+      width: 88px;
+      height: 88px;
+      background: rgba(233,155,9,0.12);
+      border: 2px solid rgba(233,155,9,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      margin: 0 auto 28px;
+      animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.4); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(233,155,9,0.1);
+      border: 1px solid rgba(233,155,9,0.25);
+      border-radius: 30px;
+      padding: 5px 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    h1 span { color: var(--accent); }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    /* What happens next */
+    .next-steps {
+      background: #141414;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 24px 20px;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+    .next-steps h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .next-steps ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .next-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: #bbb;
+      line-height: 1.55;
+    }
+    .step-dot {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: rgba(233,155,9,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+
+    /* Buttons */
+    .btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-home {
+      padding: 13px 28px;
+      background: var(--accent);
+      border-radius: 8px;
+      color: #000;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-home:hover { background: #c5840a; transform: translateY(-2px); }
+
+    .btn-wa {
+      padding: 13px 28px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-wa:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── FOOTER ───────────────────── */
+    .footer-mini {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .footer-mini span { color: var(--accent); }
+
+    @media (max-width: 560px) {
+      .card { padding: 40px 24px; }
+      .btns { flex-direction: column; align-items: center; }
+      .btn-home, .btn-wa { width: 100%; text-align: center; }
+      .navbar { padding: 10px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <img src="file_00000000eac072439d1abe2cc0e248ca.png" alt="Dev Austin Consult logo">
+  </header>
+
+  <!-- MAIN -->
+  <main class="page">
+    <div class="card">
+
+      <div class="check-wrap">✅</div>
+
+      <div class="tag">Brief Received</div>
+
+      <h1>You're All Set,<br><span>Let's Get to Work!</span></h1>
+
+      <p class="subtitle">
+        Your project brief has been successfully submitted.<br>
+        Austin will review everything and be in touch within <strong style="color:#fff;">24 hours</strong> to discuss the next steps.
+      </p>
+
+      <div class="next-steps">
+        <h3>What happens next</h3>
+        <ul>
+          <li>
+            <div class="step-dot">1</div>
+            <span>Austin reviews your brief thoroughly — usually within a few hours.</span>
+          </li>
+          <li>
+            <div class="step-dot">2</div>
+            <span>He reaches out via your preferred contact method to schedule a free consultation.</span>
+          </li>
+          <li>
+            <div class="step-dot">3</div>
+            <span>You receive a custom proposal with a clear timeline and pricing.</span>
+          </li>
+          <li>
+            <div class="step-dot">4</div>
+            <span>Work begins after the initial 50% deposit — and we build something great. 🚀</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="btns">
+        <a href="index.html" class="btn-home">← Back to Home</a>
+        <a href="https://wa.me/234XXXXXXXXXX" class="btn-wa">💬 WhatsApp Austin</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-mini">
+    © 2025 Dev Austin Consult. All rights reserved. &nbsp;·&nbsp; Built with <span>♥</span> by Austin
+  </footer>
+
+</body>
+</html>
