@@ -108,6 +108,8 @@ body {
   height: 80px;
   position: relative;
   z-index: 10;
+   background: white;
+
 }
 
 .navbar a {
