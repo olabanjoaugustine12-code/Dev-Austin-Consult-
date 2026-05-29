@@ -9,7 +9,8 @@ const ASSETS_TO_CACHE = [
   "/about.css",
    "/consult.css",
    "/consult.js",
-  "/manifest.json"
+  "/manifest.json,
+  "thank-you.html"
 ];
 
 self.addEventListener("install", (event) => {
