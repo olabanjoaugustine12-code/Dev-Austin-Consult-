@@ -1,4 +1,4 @@
-const CACHE_NAME = "devaustin-v8";
+const CACHE_NAME = "devaustin-v9";
 
 const ASSETS_TO_CACHE = [
   "/",
