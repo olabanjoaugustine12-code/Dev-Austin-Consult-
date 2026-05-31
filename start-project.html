@@ -70,9 +70,10 @@
 
     <!-- FORM -->
     <div class="form-container">
-      <form id="multiStepForm" action="/thank-you.html" method="POST" name="contact" data-netlify="true">
+      <form id="multiStepForm" action="https://api.web3forms.com/submit" method="POST">
 
-        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_API_KEY_HERE">
+        <input type="hidden" name="redirect" value="https://yoursite.com/thank-you.html">
 
         <!-- STEP 1: Contact Info -->
         <div class="form-step active">
